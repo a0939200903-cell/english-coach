@@ -17,10 +17,9 @@
   "lessons_log": [
     {
       "date": "2026-11-19",
-      "title": "Navigating the New Office Hybrid Policy",
-      "category": "Business & Daily Life",
-      "toeic_score": 550,
-      "html_path": "lessons/lesson_20261119.html"
+      "title": "Navigating the First Week at a New Job",
+      "category": "Business English & Daily Conversation",
+      "toeic_score": 550
     }
   ],
   "vocab_bank": [
@@ -73,11 +72,131 @@
       "word": "Work-life balance",
       "meaning_zh": "工作與生活平衡",
       "date": "2026-11-19"
+    },
+    {
+      "word": "a fish out of water",
+      "meaning_zh": "感到渾身不自在的人（像離水的魚）",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "break the ice",
+      "meaning_zh": "打破僵局",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "touch base",
+      "meaning_zh": "聯絡、聯繫",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "pitch in",
+      "meaning_zh": "齊心協力、幫忙",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "a walk in the park",
+      "meaning_zh": "非常簡單的事",
+      "date": "2026-11-19"
     }
   ],
-  "latest_topic": "Navigating the New Office Hybrid Policy",
+  "latest_topic": "Navigating the First Week at a New Job",
   "latest_questions": [
-    "Do you prefer working from home or working in the office? Why?",
-    "If your company suddenly changed your work schedule, how would you handle the transition to ensure your productivity stays high?"
-  ]
+    "Tell me about a time when you felt like a 'fish out of water.' How did you handle that situation?",
+    "In a professional setting, how do you usually reach out to colleagues when you need to touch base on a collaborative project?"
+  ],
+  "latest_lesson": {
+    "topic_title": "Navigating the First Week at a New Job",
+    "category": "Business English & Daily Conversation",
+    "article": "Starting a new job is always a whirlwind of emotions. Last Monday, I walked into the office feeling like a fish out of water. Not only did I struggle to remember everyone's name, but I also felt overwhelmed by the endless stream of emails. My manager, Sarah, noticed my hesitation and suggested, 'If you were to have any questions, don't hesitate to reach out.' That really broke the ice. By Wednesday, I started getting the hang of the workflow. I’ve realized that being proactive is key here. Instead of waiting for tasks, I try to touch base with my teammates to see how I can pitch in. It is not just about the technical skills; it is about building rapport. Had I known how supportive the team would be, I wouldn't have been so nervous. Now, I am finally settling into the groove. Whether you are a fresh graduate or a seasoned pro, the first week is rarely a walk in the park, but it is definitely a vital step toward professional growth. Just keep your chin up and stay curious!",
+    "vocabulary": [
+      {
+        "word": "a fish out of water",
+        "meaning_zh": "感到渾身不自在的人（像離水的魚）",
+        "example": "I felt like a fish out of water at the formal gala since I didn't know anyone."
+      },
+      {
+        "word": "break the ice",
+        "meaning_zh": "打破僵局",
+        "example": "A funny joke is a great way to break the ice during a first meeting."
+      },
+      {
+        "word": "touch base",
+        "meaning_zh": "聯絡、聯繫",
+        "example": "Let's touch base next week to discuss the project update."
+      },
+      {
+        "word": "pitch in",
+        "meaning_zh": "齊心協力、幫忙",
+        "example": "If everyone pitches in, we can finish this report by five o'clock."
+      },
+      {
+        "word": "a walk in the park",
+        "meaning_zh": "非常簡單的事",
+        "example": "Learning to use the new software was a walk in the park for him."
+      }
+    ],
+    "podcast_script": [
+      {
+        "speaker": "Alex",
+        "text": "Hey Maya, I just finished reading this article about surviving your first week at a new job. It sounds so familiar, doesn't it?"
+      },
+      {
+        "speaker": "Maya",
+        "text": "Oh, totally! I remember feeling like a fish out of water when I started my first internship. It was super nerve-wracking."
+      },
+      {
+        "speaker": "Alex",
+        "text": "Exactly. The author mentioned, 'If you were to have any questions, don't hesitate to reach out.' That’s a classic, polite way to ease someone's anxiety."
+      },
+      {
+        "speaker": "Maya",
+        "text": "Right, and using those conditional sentences makes it sound so professional yet approachable. Did you find it easy to break the ice with your team?"
+      },
+      {
+        "speaker": "Alex",
+        "text": "Not really. I’m quite shy, so I usually just wait for people to talk to me. But the article says it’s better to be proactive."
+      },
+      {
+        "speaker": "Maya",
+        "text": "I agree. You really have to touch base with your colleagues if you want to be part of the loop. Like, just ask if you can pitch in on something."
+      },
+      {
+        "speaker": "Alex",
+        "text": "That’s a good point. 'Had I known that earlier,' I would have been much more confident in my previous role."
+      },
+      {
+        "speaker": "Maya",
+        "text": "See? You’re already using those advanced structures! Honestly, starting a new job is never a walk in the park, but you’ll get there."
+      }
+    ],
+    "comprehension_quiz": [
+      {
+        "question": "Which of the following best describes the author's feeling at the beginning of the new job?",
+        "options": [
+          "Extremely confident and prepared",
+          "Uncomfortable and overwhelmed",
+          "Indifferent and bored",
+          "Angry at the manager"
+        ],
+        "correct_index": 1,
+        "explanation_zh": "文中提到作者剛到職時覺得自己像「離水的魚」（a fish out of water），且感到不知所措（overwhelmed），故選 1。"
+      },
+      {
+        "question": "Choose the correct grammatical form to complete the sentence: '____ I known about the meeting, I would have prepared the slides.'",
+        "options": [
+          "If",
+          "Had",
+          "Unless",
+          "Should"
+        ],
+        "correct_index": 1,
+        "explanation_zh": "這是過去與事實相反的假設語氣倒裝句（Inversion），原本是 If I had known...，倒裝後將 Had 移至句首，故選 1。"
+      }
+    ],
+    "speaking_questions": [
+      "Tell me about a time when you felt like a 'fish out of water.' How did you handle that situation?",
+      "In a professional setting, how do you usually reach out to colleagues when you need to touch base on a collaborative project?"
+    ]
+  },
+  "latest_lesson_date": "2026-11-19"
 }
