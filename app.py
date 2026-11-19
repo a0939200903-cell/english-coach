@@ -6,6 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 import datetime
 import json
 import os
+import random
 import time
 import edge_tts
 from google import genai
@@ -22,6 +23,7 @@ st.set_page_config(
 )
 
 PROFILE_FILE = "student_profile.json"
+ASSESSMENT_INTERVAL = 5  # 每完成 5 堂課自動提醒進行一次階段檢測
 TEXT_MODELS = [
     "gemini-3.1-flash-lite",
     "gemini-3.8-flash",
@@ -75,6 +77,29 @@ class SpeakingEvaluation(BaseModel):
     overall_encouragement_zh: str
 
 
+class AssessmentQuestion(BaseModel):
+    skill_tag: str  # 例如："聽力理解"、"單字記憶回測"、"文法與自然口語"
+    question: str
+    options: list[str]
+    correct_index: int
+    explanation_zh: str
+
+
+class MilestoneAssessment(BaseModel):
+    listening_audio_script: str
+    listening_questions: list[AssessmentQuestion]
+    vocab_and_grammar_questions: list[AssessmentQuestion]
+
+
+class AssessmentReport(BaseModel):
+    score_delta: int
+    updated_strengths: list[str]
+    updated_weaknesses: list[str]
+    next_difficulty_note: str
+    diagnostic_summary_zh: str
+    study_advice_zh: str
+
+
 # --- 讀取設定與金鑰 ---
 def get_secret(key: str, default: str = "") -> str:
     try:
@@ -119,6 +144,7 @@ def default_profile() -> dict:
         "difficulty_note": "循序漸進提升口語自然度與多益商務理解",
         "lessons_log": [],
         "vocab_bank": [],
+        "last_assessment_lesson_count": 0,
         "history": ["建立雲端學習檔案（起始預估多益 550 分）"],
     }
 
@@ -257,6 +283,10 @@ def synthesize_podcast_mp3(script: list[dict]) -> bytes:
         return mp3_fp.read()
 
 
+def synthesize_single_mp3(text: str) -> bytes:
+    return synthesize_podcast_mp3([{"speaker": "Maya", "text": text}])
+
+
 # --- 密碼保護鎖（防止陌生人耗用你的 API 額度） ---
 app_pwd = get_secret("APP_PASSWORD")
 if app_pwd and not st.session_state.get("authenticated"):
@@ -279,7 +309,17 @@ st.markdown(
     f"### 🎧 隨身英文特訓 &nbsp; `多益預估 {profile['estimated_toeic']} 分 ({profile.get('cefr_level', 'B1')})`"
 )
 
-tab1, tab2, tab3 = st.tabs(["📖 今日課程", "🗣️ 口說實戰", "📊 學習儀表板"])
+# 檢查是否達到階段檢測里程碑（每 5 堂課提醒一次）
+total_lessons = len(profile.get("lessons_log", []))
+last_checked = profile.get("last_assessment_lesson_count", 0)
+if total_lessons > 0 and (total_lessons - last_checked) >= ASSESSMENT_INTERVAL:
+    st.info(
+        f"🎯 **階段學習檢測提醒**：你距離上次程度檢測已經完成 **{total_lessons - last_checked} 堂課**囉！建議切換到 **「🎯 階段檢測」** 分頁進行 3 分鐘綜合測驗，讓 AI 校準你的最新實力。"
+    )
+
+tab1, tab2, tab3, tab4 = st.tabs(
+    ["📖 今日課程", "🗣️ 口說實戰", "🎯 階段檢測", "📊 學習儀表板"]
+)
 
 # ==================== 分頁 1：今日課程 ====================
 with tab1:
@@ -375,7 +415,7 @@ with tab1:
                 st.markdown(f"**{v['word']}** — {v['meaning_zh']}")
                 st.caption(f"例句：{v['example']}")
 
-        # 隨堂測驗（自動記錄作答表現供 AI 評估）
+        # 隨堂測驗
         st.markdown("#### 📝 聽力與閱讀隨堂測驗")
         quiz_records = {}
         for idx, q in enumerate(latest_lesson["comprehension_quiz"], 1):
@@ -529,8 +569,193 @@ with tab2:
                                 f"💼 **多益 850+ 高分示範：** {fb['toeic_850_rewrite']}"
                             )
 
-# ==================== 分頁 3：學習儀表板 ====================
+# ==================== 分頁 3：階段檢測 ====================
 with tab3:
+    st.markdown("#### 🎯 階段性學習成果與實力檢測")
+    st.caption(
+        f"系統每 {ASSESSMENT_INTERVAL} 堂課會自動提醒檢測，你也可以隨時點擊下方按鈕，讓 AI 根據你學過的單字與目前等級出 6 題綜合考卷。"
+    )
+
+    if st.button(
+        "📝 立即生成 6 題階段性綜合測驗",
+        type="primary",
+        use_container_width=True,
+    ):
+        with st.spinner("🧠 正在從你的單字庫與弱點項目量身命題並錄製聽力音檔..."):
+            vocab_pool = profile.get("vocab_bank", [])
+            sampled_vocab = random.sample(
+                vocab_pool, min(8, len(vocab_pool))
+            )
+            vocab_str = (
+                ", ".join([f"{v['word']} ({v['meaning_zh']})" for v in sampled_vocab])
+                if sampled_vocab
+                else "尚無累積單字，請依目前多益程度命題"
+            )
+
+            test_prompt = f"""
+            你是一位專業的多益與口語能力測驗命題官。請為學生設計一份「階段性學習成果檢測卷」（共 6 題單選題），用來客觀評估他目前的真實程度與單字記憶狀況。
+            【學生資料】
+            - 目前預估多益：{profile['estimated_toeic']} 分（{profile.get('cefr_level', 'B1')}）
+            - 需加強弱點：{', '.join(profile.get('weaknesses', []))}
+            - 學生過去學過的單字庫抽樣：{vocab_str}
+
+            請嚴格依照以下結構命題：
+            1. `listening_audio_script`：一段約 70～90 字的自然英文聽力短文（可以是商務公告、同事對話或日常情境，難度符合目前分數）。
+            2. `listening_questions`（固定 2 題）：針對上方聽力短文的細節與推論單選題，`skill_tag` 填 "聽力理解"。
+            3. `vocab_and_grammar_questions`（固定 4 題）：
+               - 前 2 題為「單字記憶回測」（若有提供單字庫，請務必考裡面的單字在實際句子中的用法），`skill_tag` 填 "單字記憶回測"。
+               - 後 2 題為「文法與自然口語判斷」（針對弱點與日常/商務道地表達出題），`skill_tag` 填 "文法與自然口語"。
+            每題皆提供 4 個選項、`correct_index` (0~3) 與繁體中文解析。
+            """
+            test_data = call_gemini_structured(
+                test_prompt, MilestoneAssessment, temperature=0.6
+            )
+            test_audio = synthesize_single_mp3(
+                test_data["listening_audio_script"]
+            )
+            st.session_state["milestone_test"] = test_data
+            st.session_state["milestone_audio"] = test_audio
+            st.session_state["milestone_submitted"] = False
+            st.rerun()
+
+    test_data = st.session_state.get("milestone_test")
+    if test_data:
+        st.divider()
+        st.markdown("##### 🎧 第一部分：聽力理解測驗（第 1～2 題）")
+        st.caption("請先聆聽下方語音，再回答第 1、2 題：")
+        st.audio(st.session_state["milestone_audio"], format="audio/mp3")
+
+        all_questions = (
+            test_data["listening_questions"]
+            + test_data["vocab_and_grammar_questions"]
+        )
+        user_choices = {}
+
+        for idx, q in enumerate(all_questions, 1):
+            if idx == 3:
+                st.divider()
+                st.markdown("##### ✍️ 第二部分：單字回測與文法口語（第 3～6 題）")
+            with st.container(border=True):
+                st.markdown(f"**Q{idx}. `[{q['skill_tag']}]` {q['question']}**")
+                choice = st.radio(
+                    f"測驗作答 Q{idx}",
+                    q["options"],
+                    index=None,
+                    key=f"milestone_q_{idx}",
+                    label_visibility="collapsed",
+                )
+                user_choices[idx] = choice
+
+        if st.button(
+            "✅ 交卷並讓 AI 分析學習成果",
+            type="primary",
+            use_container_width=True,
+        ):
+            if any(v is None for v in user_choices.values()):
+                st.warning("還有題目尚未作答喔！請完成全部 6 題再交卷。")
+            else:
+                with st.spinner("📊 正在批改考卷並生成你的專屬學習診斷報告..."):
+                    results_detail = []
+                    correct_total = 0
+                    for idx, q in enumerate(all_questions, 1):
+                        correct_opt = q["options"][q["correct_index"]]
+                        is_ok = user_choices[idx] == correct_opt
+                        if is_ok:
+                            correct_total += 1
+                        results_detail.append({
+                            "q_num": idx,
+                            "skill": q["skill_tag"],
+                            "question": q["question"],
+                            "student_answer": user_choices[idx],
+                            "correct_answer": correct_opt,
+                            "is_correct": is_ok,
+                        })
+
+                    report_prompt = f"""
+                    學生剛完成一份 6 題的階段性英文綜合測驗（答對 {correct_total} / 6 題）。
+                    目前系統預估多益分數：{profile['estimated_toeic']} 分（{profile.get('cefr_level', 'B1')}）。
+                    作答明細如下：
+                    {json.dumps(results_detail, ensure_ascii=False, indent=2)}
+
+                    請根據各題型（聽力、單字回測、文法口語）的表現進行專業評估：
+                    - 答對 6 題：實力超前，給予 `score_delta` +20 到 +35。
+                    - 答對 5 題：表現穩健，給予 `score_delta` +10 到 +20。
+                    - 答對 4 題：符合目前水準，給予 `score_delta` 0 到 +10。
+                    - 答對 3 題：部分觀念或單字遺忘，給予 `score_delta` -10 到 0。
+                    - 答對 0～2 題：目前難度偏高，給予 `score_delta` -25 到 -10。
+                    請更新 `updated_strengths`、`updated_weaknesses`、`next_difficulty_note`，並用繁體中文撰寫 `diagnostic_summary_zh`（成果總結）與 `study_advice_zh`（具體複習建議）。
+                    """
+                    report_data = call_gemini_structured(
+                        report_prompt, AssessmentReport, temperature=0.5
+                    )
+
+                    old_score = profile["estimated_toeic"]
+                    new_score = max(
+                        300, min(990, old_score + report_data["score_delta"])
+                    )
+                    new_cefr = score_to_cefr(new_score)
+
+                    profile["estimated_toeic"] = new_score
+                    profile["cefr_level"] = new_cefr
+                    profile["strengths"] = report_data["updated_strengths"]
+                    profile["weaknesses"] = report_data["updated_weaknesses"]
+                    profile["difficulty_note"] = report_data[
+                        "next_difficulty_note"
+                    ]
+                    profile["last_assessment_lesson_count"] = len(
+                        profile.get("lessons_log", [])
+                    )
+                    profile["history"].append(
+                        f"[{today_str}] 完成階段檢測（答對 {correct_total}/6 題）：多益校準 {old_score} → {new_score} 分 ({new_cefr})"
+                    )
+                    save_profile(profile)
+
+                    st.session_state["milestone_submitted"] = True
+                    st.session_state["milestone_report"] = report_data
+                    st.session_state["milestone_results"] = results_detail
+                    st.session_state["milestone_score_change"] = (
+                        old_score,
+                        new_score,
+                        new_cefr,
+                        correct_total,
+                    )
+                    st.rerun()
+
+    if st.session_state.get("milestone_submitted"):
+        report_data = st.session_state["milestone_report"]
+        results_detail = st.session_state["milestone_results"]
+        old_s, new_s, new_c, c_total = st.session_state[
+            "milestone_score_change"
+        ]
+
+        st.success(
+            f"🏆 檢測完成！答對 **{c_total} / 6 題** ｜ 多益程度校準：{old_s} 分 → **{new_s} 分 ({new_c})**"
+        )
+        with st.container(border=True):
+            st.markdown("#### 📋 AI 階段性學習診斷報告")
+            st.write(f"**🔍 能力現況分析：** {report_data['diagnostic_summary_zh']}")
+            st.write(f"**💡 接下來學習建議：** {report_data['study_advice_zh']}")
+            st.caption(f"🎯 系統已同步更新後續課程方針：{report_data['next_difficulty_note']}")
+
+        with st.expander("📖 查看逐題詳解與聽力原文", expanded=True):
+            st.info(
+                f"🎧 **聽力測驗原文：**\n\n{test_data['listening_audio_script']}"
+            )
+            for idx, (q, res) in enumerate(
+                zip(all_questions, results_detail), 1
+            ):
+                if res["is_correct"]:
+                    st.markdown(
+                        f"✅ **Q{idx}（{q['skill_tag']}）答對！** 你的答案：`{res['student_answer']}`"
+                    )
+                else:
+                    st.markdown(
+                        f"❌ **Q{idx}（{q['skill_tag']}）答錯**｜你的答案：`{res['student_answer']}` → 正解：**`{res['correct_answer']}`**"
+                    )
+                st.caption(f"解析：{q['explanation_zh']}")
+
+# ==================== 分頁 4：學習儀表板 ====================
+with tab4:
     score = profile.get("estimated_toeic", 550)
     col1, col2, col3 = st.columns(3)
     col1.metric("預估多益", f"{score} 分", profile.get("cefr_level", "B1"))
@@ -540,11 +765,24 @@ with tab3:
     progress = min(1.0, max(0.05, score / 850.0))
     st.progress(progress, text=f"距離多益 800+ 目標進度 ({int(progress * 100)}%)")
 
+    lessons_since = len(profile.get("lessons_log", [])) - profile.get(
+        "last_assessment_lesson_count", 0
+    )
+    remaining = max(0, ASSESSMENT_INTERVAL - lessons_since)
+    st.caption(
+        f"⏱️ 階段檢測進度：已上 {lessons_since} 堂課（再完成 {remaining} 堂將自動提醒下一次程度體檢）"
+    )
+
+    st.markdown("#### 💪 目前掌握優勢")
+    st.write("、".join(profile.get("strengths", [])))
+
     st.markdown("#### 🎯 AI 偵測重點加強方向")
     st.write("、".join(profile.get("weaknesses", [])))
 
     st.markdown("#### 🧭 目前課程難度方針")
-    st.caption(profile.get("difficulty_note", "循序漸進提升口語自然度與多益商務理解"))
+    st.caption(
+        profile.get("difficulty_note", "循序漸進提升口語自然度與多益商務理解")
+    )
 
     st.markdown("#### 📖 累積單字複習庫")
     vocab_list = profile.get("vocab_bank", [])
