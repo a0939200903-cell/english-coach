@@ -71,6 +71,7 @@ class SpeakingEvaluation(BaseModel):
     score_delta: int
     updated_weaknesses: list[str]
     next_difficulty_note: str
+    ai_diagnostic_reason_zh: str
     overall_encouragement_zh: str
 
 
@@ -92,6 +93,17 @@ def get_gemini_client():
         )
         st.stop()
     return genai.Client(api_key=api_key)
+
+
+def score_to_cefr(score: int) -> str:
+    if score < 550:
+        return "A2"
+    elif score < 785:
+        return "B1"
+    elif score < 945:
+        return "B2"
+    else:
+        return "C1"
 
 
 # --- GitHub 雲端進度同步（確保 Streamlit 重啟後進度不遺失） ---
@@ -264,7 +276,7 @@ profile = load_profile()
 today_str = datetime.date.today().strftime("%Y-%m-%d")
 
 st.markdown(
-    f"### 🎧 隨身英文特訓 &nbsp; `多益預估 {profile['estimated_toeic']} 分`"
+    f"### 🎧 隨身英文特訓 &nbsp; `多益預估 {profile['estimated_toeic']} 分 ({profile.get('cefr_level', 'B1')})`"
 )
 
 tab1, tab2, tab3 = st.tabs(["📖 今日課程", "🗣️ 口說實戰", "📊 學習儀表板"])
@@ -283,11 +295,11 @@ with tab1:
             你是一位能動態調整教學難度的專屬英文家教。
             【學生檔案】
 - 目前預估多益分數：{profile['estimated_toeic']} 分（目標 800 分以上，並能流暢與外國人日常聊天）
-- CEFR 等級：{profile['cefr_level']}
+- CEFR 等級：{profile.get('cefr_level', 'B1')}
 - 需加強弱點：{', '.join(profile.get('weaknesses', []))}
-- 難度調整指示：{profile.get('difficulty_note', '循序漸進')}
+- AI 系統難度調整指示：{profile.get('difficulty_note', '循序漸進')}
 
-            請產出今日教材：
+            請產出今日教材（請嚴格依據目前分數與難度指示調整用字深度與句型複雜度）：
 1. 一篇約 230 字的英文短文（結合道地日常口語與多益商務情境）。
 2. 5 個核心單字或片語（附繁體中文解釋與實用英文例句）。
 3. 一段 8～10 輪的雙人 Podcast 對話劇本，由 Alex（男）與 Maya（女）輕鬆討論文章內容，加入自然口語連貫詞。speaker 只能填 "Alex" 或 "Maya"。
@@ -300,6 +312,7 @@ with tab1:
             mp3_bytes = synthesize_podcast_mp3(lesson_data["podcast_script"])
             st.session_state["audio_bytes"] = mp3_bytes
             st.session_state["audio_date"] = today_str
+            st.session_state["today_quiz_records"] = {}
 
             profile["latest_lesson"] = lesson_data
             profile["latest_lesson_date"] = today_str
@@ -362,8 +375,9 @@ with tab1:
                 st.markdown(f"**{v['word']}** — {v['meaning_zh']}")
                 st.caption(f"例句：{v['example']}")
 
-        # 隨堂測驗
+        # 隨堂測驗（自動記錄作答表現供 AI 評估）
         st.markdown("#### 📝 聽力與閱讀隨堂測驗")
+        quiz_records = {}
         for idx, q in enumerate(latest_lesson["comprehension_quiz"], 1):
             st.markdown(f"**Q{idx}. {q['question']}**")
             choice = st.radio(
@@ -375,12 +389,18 @@ with tab1:
             )
             if choice is not None:
                 correct_opt = q["options"][q["correct_index"]]
-                if choice == correct_opt:
+                is_correct = choice == correct_opt
+                quiz_records[f"Q{idx}"] = {
+                    "question": q["question"],
+                    "is_correct": is_correct,
+                }
+                if is_correct:
                     st.success(f"✅ 答對了！{q['explanation_zh']}")
                 else:
                     st.error(
                         f"❌ 正確答案是：{correct_opt}\n\n解析：{q['explanation_zh']}"
                     )
+        st.session_state["today_quiz_records"] = quiz_records
     else:
         st.info(
             "👆 點擊上方按鈕，立即為你生成今天的第一堂隨身英文課！"
@@ -394,7 +414,7 @@ with tab2:
     else:
         st.markdown("#### 🗣️ 通勤口說挑戰")
         st.caption(
-            "方便開口時可直接按麥克風錄音；若在安靜車廂內，也可以直接用下方文字框輸入。"
+            "方便開口時可直接按麥克風錄音；若在安靜車廂內，也可以直接用下方文字框輸入。送出後 AI 會自動評估你的真實程度並調整明日難度！"
         )
 
         audio_answers = []
@@ -413,14 +433,8 @@ with tab2:
                 audio_answers.append(aud)
                 text_answers.append(txt)
 
-        feeling = st.select_slider(
-            "📊 今天這堂課的整體難度感覺如何？",
-            options=["有點吃力", "剛剛好", "太簡單了"],
-            value="剛剛好",
-        )
-
         if st.button(
-            "🚀 送出給 AI 教練批改並更新難度",
+            "🚀 送出給 AI 教練客觀批改並自動調整難度",
             type="primary",
             use_container_width=True,
         ):
@@ -430,13 +444,27 @@ with tab2:
             if not has_any_input:
                 st.warning("請至少錄音或輸入一題的英文回答再送出喔！")
             else:
-                with st.spinner("🧠 AI 教練正在仔細聽你的回答並分析表達..."):
+                with st.spinner("🧠 AI 教練正在客觀分析你的文法、用字深度與測驗表現..."):
+                    quiz_records = st.session_state.get("today_quiz_records", {})
+                    if quiz_records:
+                        correct_cnt = sum(
+                            1 for v in quiz_records.values() if v["is_correct"]
+                        )
+                        quiz_summary = f"今日閱讀測驗作答 {len(quiz_records)} 題，答對 {correct_cnt} 題（明細：{json.dumps(quiz_records, ensure_ascii=False)}）。"
+                    else:
+                        quiz_summary = "學生今日尚未作答閱讀測驗，請完全依據以下口說／文字回答表現進行客觀評估。"
+
                     contents = [
                         f"""
-                        你是一位親切且專業的英文口說教練，目標是幫助學生「與外國人自然流暢聊天」並「考取多益 800 分以上」。
-                        學生目前預估程度：多益 {profile['estimated_toeic']} 分（{profile['cefr_level']}）。
-                        學生主觀難度感受：{feeling}。
-                        請針對以下 {len(questions)} 題逐題批改（若有附上語音檔，請直接聆聽語音內容、發音流暢度與文法；若只有文字則批改文字），並決定明天的課程難度調整分數（score_delta 介於 -25 到 +35 之間）。
+                        你是一位精準、客觀且善於因材施教的 AI 英文教練，目標是幫助學生「與外國人自然流暢聊天」並「考取多益 800 分以上」。
+                        學生目前系統預估程度：多益 {profile['estimated_toeic']} 分（{profile.get('cefr_level', 'B1')}）。
+                        【客觀測驗表現】{quiz_summary}
+
+                        請不要依賴學生主觀感覺，而是**完全根據學生實際回答的英文品質（語音流暢度、發音清晰度、句型結構完整度、單字豐富度、文法正確率）以及測驗表現**，客觀判斷他目前的真實程度：
+                        - 若回答非常順暢、句型多變、用字精準且測驗全對：給予大幅加分（score_delta: +15 到 +35），並在 next_difficulty_note 指示明日提高文章與單字難度。
+                        - 若表現符合目前分數水準、有小文法錯誤但能溝通：給予穩定微調（score_delta: +5 到 +15），維持穩健難度。
+                        - 若回答明顯吃力、大量中式英文、單字貧乏或測驗答錯：適度下修分數（score_delta: -20 到 -5），並在 next_difficulty_note 指示明日放慢難度、先鞏固基礎句型。
+                        請在 ai_diagnostic_reason_zh 用繁體中文簡潔說明你做出此難度調整的客觀依據。
                         """
                     ]
                     for idx, q in enumerate(questions, 1):
@@ -456,26 +484,33 @@ with tab2:
                             )
 
                     eval_data = call_gemini_structured(
-                        contents, SpeakingEvaluation, temperature=0.6
+                        contents, SpeakingEvaluation, temperature=0.5
                     )
 
                     old_score = profile["estimated_toeic"]
                     new_score = max(
                         300, min(990, old_score + eval_data["score_delta"])
                     )
+                    new_cefr = score_to_cefr(new_score)
                     profile["estimated_toeic"] = new_score
+                    profile["cefr_level"] = new_cefr
                     profile["weaknesses"] = eval_data["updated_weaknesses"]
                     profile["difficulty_note"] = eval_data[
                         "next_difficulty_note"
                     ]
                     profile["history"].append(
-                        f"[{today_str}] 完成口說實戰：多益預估 {old_score} → {new_score} 分"
+                        f"[{today_str}] AI 客觀評估：多益預估 {old_score} → {new_score} 分 ({new_cefr})"
                     )
                     save_profile(profile)
 
                     st.success(
-                        f"🎉 批改完成！你的動態難度已更新：多益 {old_score} 分 → **{new_score} 分**"
+                        f"🎉 AI 客觀評估完成！難度已自動校準：多益 {old_score} 分 → **{new_score} 分 ({new_cefr})**"
                     )
+                    with st.container(border=True):
+                        st.markdown("#### 🤖 AI 教練客觀程度診斷")
+                        st.write(eval_data["ai_diagnostic_reason_zh"])
+                        st.caption(f"🎯 明日課程難度方針：{eval_data['next_difficulty_note']}")
+
                     st.info(f"🌟 教練總評：{eval_data['overall_encouragement_zh']}")
 
                     for i, fb in enumerate(eval_data["feedbacks"], 1):
@@ -505,8 +540,11 @@ with tab3:
     progress = min(1.0, max(0.05, score / 850.0))
     st.progress(progress, text=f"距離多益 800+ 目標進度 ({int(progress * 100)}%)")
 
-    st.markdown("#### 🎯 目前重點加強方向")
+    st.markdown("#### 🎯 AI 偵測重點加強方向")
     st.write("、".join(profile.get("weaknesses", [])))
+
+    st.markdown("#### 🧭 目前課程難度方針")
+    st.caption(profile.get("difficulty_note", "循序漸進提升口語自然度與多益商務理解"))
 
     st.markdown("#### 📖 累積單字複習庫")
     vocab_list = profile.get("vocab_bank", [])
