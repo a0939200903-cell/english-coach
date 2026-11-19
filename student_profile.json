@@ -17,8 +17,8 @@
   "lessons_log": [
     {
       "date": "2026-11-19",
-      "title": "Navigating the First Week at a New Job",
-      "category": "Business English & Daily Conversation",
+      "title": "Navigating Office Small Talk and Networking",
+      "category": "Business & Daily Life",
       "toeic_score": 550
     }
   ],
@@ -97,105 +97,125 @@
       "word": "a walk in the park",
       "meaning_zh": "非常簡單的事",
       "date": "2026-11-19"
+    },
+    {
+      "word": "build rapport",
+      "meaning_zh": "建立良好關係",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "daunting",
+      "meaning_zh": "令人畏懼的；艱鉅的",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "in the same boat",
+      "meaning_zh": "處於同樣的困境",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "second nature",
+      "meaning_zh": "習以為常的事；本能",
+      "date": "2026-11-19"
     }
   ],
-  "latest_topic": "Navigating the First Week at a New Job",
+  "latest_topic": "Navigating Office Small Talk and Networking",
   "latest_questions": [
-    "Tell me about a time when you felt like a 'fish out of water.' How did you handle that situation?",
-    "In a professional setting, how do you usually reach out to colleagues when you need to touch base on a collaborative project?"
+    "What is your favorite way to start a conversation with someone you just met at a party?",
+    "If you were to give advice to a new employee about fitting into a team, what would you tell them?"
   ],
   "latest_lesson": {
-    "topic_title": "Navigating the First Week at a New Job",
-    "category": "Business English & Daily Conversation",
-    "article": "Starting a new job is always a whirlwind of emotions. Last Monday, I walked into the office feeling like a fish out of water. Not only did I struggle to remember everyone's name, but I also felt overwhelmed by the endless stream of emails. My manager, Sarah, noticed my hesitation and suggested, 'If you were to have any questions, don't hesitate to reach out.' That really broke the ice. By Wednesday, I started getting the hang of the workflow. I’ve realized that being proactive is key here. Instead of waiting for tasks, I try to touch base with my teammates to see how I can pitch in. It is not just about the technical skills; it is about building rapport. Had I known how supportive the team would be, I wouldn't have been so nervous. Now, I am finally settling into the groove. Whether you are a fresh graduate or a seasoned pro, the first week is rarely a walk in the park, but it is definitely a vital step toward professional growth. Just keep your chin up and stay curious!",
+    "topic_title": "Navigating Office Small Talk and Networking",
+    "category": "Business & Daily Life",
+    "article": "In today’s fast-paced work environment, building rapport with colleagues is just as important as meeting deadlines. Many employees, especially those new to a company, find small talk quite daunting. However, it is the cornerstone of professional networking. Imagine you are at the coffee machine; instead of checking your phone, try asking a simple question like, 'How is your project coming along?' or 'What are your plans for the weekend?' These small interactions are not just fillers; they help you break the ice. Rarely do we realize that these casual moments can actually lead to significant career opportunities. Not only does socializing boost your mood, but it also fosters a collaborative spirit. If you ever feel nervous, remember that everyone is in the same boat. Never underestimate the power of a genuine smile or a quick 'hello.' By consistently engaging with others, you will find that office communication becomes second nature. If you were to practice these techniques daily, you would surely see an improvement in your workplace relationships. So, next time you are in the breakroom, take a deep breath and start a conversation. You never know who you might meet or what you might learn.",
     "vocabulary": [
       {
-        "word": "a fish out of water",
-        "meaning_zh": "感到渾身不自在的人（像離水的魚）",
-        "example": "I felt like a fish out of water at the formal gala since I didn't know anyone."
+        "word": "build rapport",
+        "meaning_zh": "建立良好關係",
+        "example": "It is essential to build rapport with your new clients during the first meeting."
+      },
+      {
+        "word": "daunting",
+        "meaning_zh": "令人畏懼的；艱鉅的",
+        "example": "Starting a new job in a foreign country can be a daunting experience."
       },
       {
         "word": "break the ice",
         "meaning_zh": "打破僵局",
-        "example": "A funny joke is a great way to break the ice during a first meeting."
+        "example": "A funny joke is a great way to break the ice at the start of a presentation."
       },
       {
-        "word": "touch base",
-        "meaning_zh": "聯絡、聯繫",
-        "example": "Let's touch base next week to discuss the project update."
+        "word": "in the same boat",
+        "meaning_zh": "處於同樣的困境",
+        "example": "We are all in the same boat regarding the upcoming budget cuts."
       },
       {
-        "word": "pitch in",
-        "meaning_zh": "齊心協力、幫忙",
-        "example": "If everyone pitches in, we can finish this report by five o'clock."
-      },
-      {
-        "word": "a walk in the park",
-        "meaning_zh": "非常簡單的事",
-        "example": "Learning to use the new software was a walk in the park for him."
+        "word": "second nature",
+        "meaning_zh": "習以為常的事；本能",
+        "example": "After driving for ten years, parking has become second nature to me."
       }
     ],
     "podcast_script": [
       {
         "speaker": "Alex",
-        "text": "Hey Maya, I just finished reading this article about surviving your first week at a new job. It sounds so familiar, doesn't it?"
+        "text": "Hey Maya, I read this interesting piece on office small talk. It says we should chat more at the coffee machine."
       },
       {
         "speaker": "Maya",
-        "text": "Oh, totally! I remember feeling like a fish out of water when I started my first internship. It was super nerve-wracking."
+        "text": "Oh, that sounds familiar! Honestly, Alex, I used to find that kind of social interaction a bit daunting."
       },
       {
         "speaker": "Alex",
-        "text": "Exactly. The author mentioned, 'If you were to have any questions, don't hesitate to reach out.' That’s a classic, polite way to ease someone's anxiety."
+        "text": "Same here. I always felt like I didn't know how to break the ice without sounding awkward."
       },
       {
         "speaker": "Maya",
-        "text": "Right, and using those conditional sentences makes it sound so professional yet approachable. Did you find it easy to break the ice with your team?"
+        "text": "Exactly. But the article mentioned that we are all in the same boat. Everyone is a bit nervous sometimes."
       },
       {
         "speaker": "Alex",
-        "text": "Not really. I’m quite shy, so I usually just wait for people to talk to me. But the article says it’s better to be proactive."
+        "text": "Right. It also mentioned that if we were to practice small talk more often, it would become second nature."
       },
       {
         "speaker": "Maya",
-        "text": "I agree. You really have to touch base with your colleagues if you want to be part of the loop. Like, just ask if you can pitch in on something."
+        "text": "That is a great point. It is not just about chatting; it is about building rapport with the team."
       },
       {
         "speaker": "Alex",
-        "text": "That’s a good point. 'Had I known that earlier,' I would have been much more confident in my previous role."
+        "text": "Totally. It actually makes the workday feel less stressful, don't you think?"
       },
       {
         "speaker": "Maya",
-        "text": "See? You’re already using those advanced structures! Honestly, starting a new job is never a walk in the park, but you’ll get there."
+        "text": "For sure. I’ll definitely try to start more conversations tomorrow!"
       }
     ],
     "comprehension_quiz": [
       {
-        "question": "Which of the following best describes the author's feeling at the beginning of the new job?",
+        "question": "What does the author suggest about small talk in the office?",
         "options": [
-          "Extremely confident and prepared",
-          "Uncomfortable and overwhelmed",
-          "Indifferent and bored",
-          "Angry at the manager"
+          "It is a waste of time and should be avoided.",
+          "It is essential for building professional relationships.",
+          "It is only important for people who are new to the company.",
+          "It should only be done when you need a favor."
         ],
         "correct_index": 1,
-        "explanation_zh": "文中提到作者剛到職時覺得自己像「離水的魚」（a fish out of water），且感到不知所措（overwhelmed），故選 1。"
+        "explanation_zh": "文章提到小對話是專業人脈建立的基石（cornerstone of professional networking），因此它是建立關係的重要環節。"
       },
       {
-        "question": "Choose the correct grammatical form to complete the sentence: '____ I known about the meeting, I would have prepared the slides.'",
+        "question": "According to the article, what happens if you practice small talk consistently?",
         "options": [
-          "If",
-          "Had",
-          "Unless",
-          "Should"
+          "It will become a natural habit.",
+          "You will be required to work longer hours.",
+          "You will find it more difficult to talk to others.",
+          "Your manager will ask you to stop."
         ],
-        "correct_index": 1,
-        "explanation_zh": "這是過去與事實相反的假設語氣倒裝句（Inversion），原本是 If I had known...，倒裝後將 Had 移至句首，故選 1。"
+        "correct_index": 0,
+        "explanation_zh": "文中提到 'By consistently engaging with others, you will find that office communication becomes second nature'，意指這會變成一種習以為常的本能。"
       }
     ],
     "speaking_questions": [
-      "Tell me about a time when you felt like a 'fish out of water.' How did you handle that situation?",
-      "In a professional setting, how do you usually reach out to colleagues when you need to touch base on a collaborative project?"
+      "What is your favorite way to start a conversation with someone you just met at a party?",
+      "If you were to give advice to a new employee about fitting into a team, what would you tell them?"
     ]
   },
   "latest_lesson_date": "2026-11-19"
