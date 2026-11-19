@@ -1,0 +1,37 @@
+name: Daily AI English Lesson
+
+on:
+  schedule:
+    # 台灣時間 (UTC+8) 每天凌晨 05:00 = UTC 時間前一日 21:00
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-lesson:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-genai pydantic
+
+      - name: Generate daily English lesson
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python daily_generator.py
+
+      - name: Commit and push updated profile
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add student_profile.json
+          git diff --staged --quiet || (git commit -m "Auto-generate daily English lesson (05:00 TW)" && git push)  
