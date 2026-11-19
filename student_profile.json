@@ -1,0 +1,83 @@
+{
+  "estimated_toeic": 550,
+  "cefr_level": "B1",
+  "strengths": [
+    "Business Phrasal Verbs",
+    "Business Vocabulary and Collocations"
+  ],
+  "weaknesses": [
+    "Daily Conversational English",
+    "Advanced Grammar (Inversion/Conditionals)",
+    "Advanced Business Contextual Usage"
+  ],
+  "difficulty_note": "The student shows an inconsistent performance across levels. While they can handle B1-level business vocabulary, they struggle with basic conversational English and advanced grammatical structures. I recommend a mix of A2-B1 level questions to build confidence, while gradually introducing B2-level grammar exercises to address the identified gaps.",
+  "history": [
+    "初始檢測完成：預估多益 550 分 (B1)"
+  ],
+  "lessons_log": [
+    {
+      "date": "2026-11-19",
+      "title": "Navigating the New Office Hybrid Policy",
+      "category": "Business & Daily Life",
+      "toeic_score": 550,
+      "html_path": "lessons/lesson_20261119.html"
+    }
+  ],
+  "vocab_bank": [
+    {
+      "word": "pop up",
+      "meaning_zh": "突然出現",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "overwhelmed",
+      "meaning_zh": "不知所措的；應接不暇的",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "prior commitment",
+      "meaning_zh": "先前的承諾/行程",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "assertive",
+      "meaning_zh": "自信且堅定的",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "in the long run",
+      "meaning_zh": "從長遠來看",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "Hybrid",
+      "meaning_zh": "混合式的（指結合遠端與辦公室的工作模式）",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "Commute",
+      "meaning_zh": "通勤",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "Flexibility",
+      "meaning_zh": "彈性",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "Adapt to",
+      "meaning_zh": "適應",
+      "date": "2026-11-19"
+    },
+    {
+      "word": "Work-life balance",
+      "meaning_zh": "工作與生活平衡",
+      "date": "2026-11-19"
+    }
+  ],
+  "latest_topic": "Navigating the New Office Hybrid Policy",
+  "latest_questions": [
+    "Do you prefer working from home or working in the office? Why?",
+    "If your company suddenly changed your work schedule, how would you handle the transition to ensure your productivity stays high?"
+  ]
+}
