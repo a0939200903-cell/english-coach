@@ -1,3 +1,5 @@
+from gtts import gTTS
+import io
 import asyncio
 import base64
 from concurrent.futures import ThreadPoolExecutor
@@ -204,29 +206,43 @@ def call_gemini_structured(contents, schema, temperature: float = 0.7):
 
 
 def synthesize_podcast_mp3(script: list[dict]) -> bytes:
-    async def _gen():
-        voices = {
-            "Alex": "en-US-AndrewNeural",
-            "Maya": "en-US-AvaNeural",
-        }
-        audio_chunks = bytearray()
+    try:
+        async def _gen():
+            voices = {
+                "Alex": "en-US-AndrewNeural",
+                "Maya": "en-US-AvaNeural",
+            }
+            audio_chunks = bytearray()
+            for turn in script:
+                voice = voices.get(turn["speaker"], "en-US-AvaNeural")
+                comm = edge_tts.Communicate(turn["text"], voice)
+                async for chunk in comm.stream():
+                    if chunk["type"] == "audio":
+                        audio_chunks.extend(chunk["data"])
+            if not audio_chunks:
+                raise RuntimeError("Empty audio received from edge_tts")
+            return bytes(audio_chunks)
+
+        def _thread_runner():
+            loop = asyncio.new_event_loop()
+            try:
+                return loop.run_until_complete(_gen())
+            finally:
+                loop.close()
+
+        with ThreadPoolExecutor(max_workers=1) as executor:
+            return executor.submit(_thread_runner).result()
+    except Exception:
+        mp3_fp = io.BytesIO()
         for turn in script:
-            voice = voices.get(turn["speaker"], "en-US-AvaNeural")
-            comm = edge_tts.Communicate(turn["text"], voice)
-            async for chunk in comm.stream():
-                if chunk["type"] == "audio":
-                    audio_chunks.extend(chunk["data"])
-        return bytes(audio_chunks)
-
-    def _thread_runner():
-        loop = asyncio.new_event_loop()
-        try:
-            return loop.run_until_complete(_gen())
-        finally:
-            loop.close()
-
-    with ThreadPoolExecutor(max_workers=1) as executor:
-        return executor.submit(_thread_runner).result()
+            text = turn.get("text", "").strip()
+            if not text:
+                continue
+            accent = "com" if turn.get("speaker") == "Alex" else "co.uk"
+            tts = gTTS(text=text, lang="en", tld=accent)
+            tts.write_to_fp(mp3_fp)
+        mp3_fp.seek(0)
+        return mp3_fp.read()
 
 
 # --- 密碼保護鎖（防止陌生人耗用你的 API 額度） ---
@@ -266,17 +282,17 @@ with tab1:
             prompt = f"""
             你是一位能動態調整教學難度的專屬英文家教。
             【學生檔案】
-            - 目前預估多益分數：{profile['estimated_toeic']} 分（目標 800 分以上，並能流暢與外國人日常聊天）
-            - CEFR 等級：{profile['cefr_level']}
-            - 需加強弱點：{', '.join(profile.get('weaknesses', []))}
-            - 難度調整指示：{profile.get('difficulty_note', '循序漸進')}
+- 目前預估多益分數：{profile['estimated_toeic']} 分（目標 800 分以上，並能流暢與外國人日常聊天）
+- CEFR 等級：{profile['cefr_level']}
+- 需加強弱點：{', '.join(profile.get('weaknesses', []))}
+- 難度調整指示：{profile.get('difficulty_note', '循序漸進')}
 
             請產出今日教材：
-            1. 一篇約 230 字的英文短文（結合道地日常口語與多益商務情境）。
-            2. 5 個核心單字或片語（附繁體中文解釋與實用英文例句）。
-            3. 一段 8～10 輪的雙人 Podcast 對話劇本，由 Alex（男）與 Maya（女）輕鬆討論文章內容，加入自然口語連貫詞。speaker 只能填 "Alex" 或 "Maya"。
-            4. 2 題多益風格單選題（每題 4 個選項，附正確索引 0~3 與繁體中文解析）。
-            5. 2 個口說挑戰問題（第 1 題日常聊天，第 2 題多益職場情境）。
+1. 一篇約 230 字的英文短文（結合道地日常口語與多益商務情境）。
+2. 5 個核心單字或片語（附繁體中文解釋與實用英文例句）。
+3. 一段 8～10 輪的雙人 Podcast 對話劇本，由 Alex（男）與 Maya（女）輕鬆討論文章內容，加入自然口語連貫詞。speaker 只能填 "Alex" 或 "Maya"。
+4. 2 題多益風格單選題（每題 4 個選項，附正確索引 0~3 與繁體中文解析）。
+5. 2 個口說挑戰問題（第 1 題日常聊天，第 2 題多益職場情境）。
             """
             lesson_data = call_gemini_structured(
                 prompt, DailyLesson, temperature=0.7
