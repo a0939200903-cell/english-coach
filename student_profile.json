@@ -26,6 +26,12 @@
       "title": "Navigating Office Small Talk and Networking",
       "category": "Business & Daily English",
       "toeic_score": 550
+    },
+    {
+      "date": "2026-11-21",
+      "title": "Navigating Office Small Talk and Networking",
+      "category": "Business Communication",
+      "toeic_score": 550
     }
   ],
   "vocab_bank": [
@@ -148,106 +154,116 @@
       "word": "Rarely",
       "meaning_zh": "罕見地；幾乎不",
       "date": "2026-11-20"
+    },
+    {
+      "word": "Common ground",
+      "meaning_zh": "共同點",
+      "date": "2026-11-21"
+    },
+    {
+      "word": "Underestimate",
+      "meaning_zh": "低估",
+      "date": "2026-11-21"
     }
   ],
   "latest_topic": "Navigating Office Small Talk and Networking",
   "latest_questions": [
-    "What is one topic you usually talk about when you meet a new person at a social gathering or in the office?",
-    "If you were a manager, how would you encourage your team members to communicate more effectively without relying solely on emails?"
+    "What is your favorite way to start a conversation with someone you just met at a party or social event?",
+    "In a business meeting, how do you handle a situation where you disagree with a colleague's idea?"
   ],
   "latest_lesson": {
     "topic_title": "Navigating Office Small Talk and Networking",
-    "category": "Business & Daily English",
-    "article": "In today’s fast-paced office environment, mastering the art of small talk is just as important as meeting your KPIs. Many employees find it nerve-wracking to initiate a conversation near the coffee machine, but it is a vital skill for career growth. Not only does it build rapport with colleagues, but it also opens doors to unexpected opportunities. Recently, our team implemented a new policy: 'No-Email Fridays.' Instead of sending endless threads, we are encouraged to walk over and chat. Surprisingly, productivity has soared. Had I known that face-to-face interaction was so effective, I would have started doing this months ago. If you want to improve your professional network, start by asking open-ended questions. Instead of asking 'Did you have a good weekend?', try 'What was the highlight of your weekend?' This small change makes a world of difference. Remember, networking isn't about collecting business cards; it’s about creating genuine connections. Rarely do we realize how much a simple five-minute chat can influence our future projects. So, next time you are waiting for your coffee, don’t just stare at your phone. Take a deep breath, smile, and say hello to the person standing next to you. You never know where that conversation might lead.",
+    "category": "Business Communication",
+    "article": "In today’s fast-paced work environment, mastering the art of small talk is just as important as meeting deadlines. Many employees feel nervous when they have to chat with colleagues or clients near the coffee machine. However, if you want to build strong professional relationships, you need to step out of your comfort zone. For instance, instead of just talking about the weather, try asking open-ended questions like, 'How has your week been so far?' or 'Are you working on anything exciting lately?' Not only does this show genuine interest, but it also helps you find common ground. Furthermore, never underestimate the power of networking events. Even if you are an introvert, setting a small goal, such as meeting two new people, can make a big difference. Remember, rarely does a great opportunity come to those who stay silent in the corner. Should you find yourself feeling anxious, just take a deep breath and keep it simple. By practicing these small interactions daily, you will soon find that professional networking becomes second nature. It is not about being the loudest person in the room; it is about making meaningful connections that last.",
     "vocabulary": [
       {
-        "word": "Rapport",
-        "meaning_zh": "（建立）和諧關係；融洽",
-        "example": "It is essential to build rapport with your clients during the first meeting."
-      },
-      {
-        "word": "Nerve-wracking",
-        "meaning_zh": "傷腦筋的；令人緊張的",
-        "example": "Giving a presentation to the board of directors can be quite nerve-wracking."
-      },
-      {
         "word": "Open-ended",
-        "meaning_zh": "開放式的（問題）",
-        "example": "Using open-ended questions helps to keep the conversation flowing naturally."
+        "meaning_zh": "開放式的（指無法用是或否回答的問題）",
+        "example": "Using open-ended questions helps to keep the conversation going."
       },
       {
-        "word": "Soar",
-        "meaning_zh": "急升；飆升",
-        "example": "Since the new marketing campaign launched, our website traffic has started to soar."
+        "word": "Common ground",
+        "meaning_zh": "共同點",
+        "example": "We found some common ground regarding our interest in international travel."
+      },
+      {
+        "word": "Underestimate",
+        "meaning_zh": "低估",
+        "example": "Never underestimate the importance of good communication skills in the workplace."
+      },
+      {
+        "word": "Second nature",
+        "meaning_zh": "習以為常的事、本能",
+        "example": "After months of practice, driving in the city became second nature to me."
       },
       {
         "word": "Rarely",
-        "meaning_zh": "罕見地；幾乎不",
-        "example": "Rarely do we see such a dedicated employee working overtime without being asked."
+        "meaning_zh": "很少、幾乎不（用於句首時需倒裝）",
+        "example": "Rarely do I have time to relax during the busy season."
       }
     ],
     "podcast_script": [
       {
         "speaker": "Alex",
-        "text": "Hey Maya, I just finished reading this interesting piece about office small talk. Do you find it hard to chat with coworkers?"
+        "text": "Hey Maya, I read this interesting article about small talk in the office. Do you find it easy to chat with coworkers?"
       },
       {
         "speaker": "Maya",
-        "text": "Honestly, Alex? Sometimes it’s super nerve-wracking, especially when I’m trying to focus on a deadline."
+        "text": "To be honest, Alex, not really! Sometimes I just feel awkward standing by the coffee machine."
       },
       {
         "speaker": "Alex",
-        "text": "I totally get that. But the article says it’s actually key to building rapport. I guess it makes us feel more like a team."
+        "text": "I totally get that. The article suggests asking open-ended questions. Like, instead of saying 'It's cold today,' ask 'What are you working on?'"
       },
       {
         "speaker": "Maya",
-        "text": "That’s true. And what about that 'No-Email Friday' idea? That sounds like a cool way to force us to talk more."
+        "text": "That’s a great point. It makes the conversation feel more natural, right?"
       },
       {
         "speaker": "Alex",
-        "text": "Right? Had I known it would boost productivity, I would have pushed for it years ago!"
+        "text": "Exactly. And it helps you find common ground with people you don't know well."
       },
       {
         "speaker": "Maya",
-        "text": "Exactly. Plus, it’s all about asking those open-ended questions. It makes the conversation feel way less forced."
+        "text": "True. But what about networking events? I usually end up hiding in the corner."
       },
       {
         "speaker": "Alex",
-        "text": "Totally. I usually just ask 'How are you?', but that leads to a dead end. I should try asking about their weekend highlights instead."
+        "text": "Haha, I’ve been there! The trick is to set small goals, like just talking to two new people."
       },
       {
         "speaker": "Maya",
-        "text": "Give it a shot! You’d be surprised how much people love sharing their stories if you just give them a chance."
+        "text": "That sounds much more manageable. I’ll definitely try that next time."
       }
     ],
     "comprehension_quiz": [
       {
-        "question": "What is the main benefit of 'No-Email Fridays' mentioned in the text?",
+        "question": "What does the author suggest to improve professional networking?",
         "options": [
-          "It helps employees finish their work earlier on Fridays.",
-          "It encourages face-to-face interaction, leading to higher productivity.",
-          "It allows employees to use their phones more during work hours.",
-          "It reduces the number of meetings held during the week."
+          "Focusing only on technical work deadlines.",
+          "Asking open-ended questions to find common ground.",
+          "Avoiding networking events to stay comfortable.",
+          "Talking about the weather as much as possible."
         ],
         "correct_index": 1,
-        "explanation_zh": "文章提到 'No-Email Fridays' 的目的是鼓勵面對面溝通，進而提升了生產力。"
+        "explanation_zh": "文章中提到為了建立專業關係，應使用開放式問題來尋找共同點，而非僅談論天氣。"
       },
       {
-        "question": "Which sentence correctly uses the inversion structure mentioned in the text?",
+        "question": "Choose the correct sentence structure: 'Rarely ___ a great opportunity come to those who stay silent.'",
         "options": [
-          "Rarely we do see such a dedicated employee.",
-          "Rarely do we see such a dedicated employee.",
-          "Rarely we see such a dedicated employee.",
-          "Rarely does we see such a dedicated employee."
+          "does",
+          "do",
+          "is",
+          "has"
         ],
-        "correct_index": 1,
-        "explanation_zh": "當句子由否定副詞（如 Rarely）開頭時，必須使用倒裝句結構（助動詞 + 主詞 + 動詞），因此選 1。"
+        "correct_index": 0,
+        "explanation_zh": "當否定副詞 Rarely 放在句首時，句子需要倒裝。主詞 'a great opportunity' 是單數，因此助動詞使用 does。"
       }
     ],
     "speaking_questions": [
-      "What is one topic you usually talk about when you meet a new person at a social gathering or in the office?",
-      "If you were a manager, how would you encourage your team members to communicate more effectively without relying solely on emails?"
+      "What is your favorite way to start a conversation with someone you just met at a party or social event?",
+      "In a business meeting, how do you handle a situation where you disagree with a colleague's idea?"
     ]
   },
-  "latest_lesson_date": "2026-11-20"
+  "latest_lesson_date": "2026-11-21"
 }
