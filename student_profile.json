@@ -32,6 +32,12 @@
       "title": "Navigating Office Small Talk and Networking",
       "category": "Business Communication",
       "toeic_score": 550
+    },
+    {
+      "date": "2026-11-22",
+      "title": "Navigating Office Small Talk and Networking",
+      "category": "Business Communication",
+      "toeic_score": 550
     }
   ],
   "vocab_bank": [
@@ -164,106 +170,116 @@
       "word": "Underestimate",
       "meaning_zh": "低估",
       "date": "2026-11-21"
+    },
+    {
+      "word": "genuine",
+      "meaning_zh": "真誠的，真實的",
+      "date": "2026-11-22"
+    },
+    {
+      "word": "not only... but also...",
+      "meaning_zh": "不僅……而且……",
+      "date": "2026-11-22"
     }
   ],
   "latest_topic": "Navigating Office Small Talk and Networking",
   "latest_questions": [
-    "What is your favorite way to start a conversation with someone you just met at a party or social event?",
-    "In a business meeting, how do you handle a situation where you disagree with a colleague's idea?"
+    "What is your favorite topic to talk about when you first meet someone at a social event?",
+    "In a business meeting, how do you politely handle a situation where you disagree with a colleague's suggestion?"
   ],
   "latest_lesson": {
     "topic_title": "Navigating Office Small Talk and Networking",
     "category": "Business Communication",
-    "article": "In today’s fast-paced work environment, mastering the art of small talk is just as important as meeting deadlines. Many employees feel nervous when they have to chat with colleagues or clients near the coffee machine. However, if you want to build strong professional relationships, you need to step out of your comfort zone. For instance, instead of just talking about the weather, try asking open-ended questions like, 'How has your week been so far?' or 'Are you working on anything exciting lately?' Not only does this show genuine interest, but it also helps you find common ground. Furthermore, never underestimate the power of networking events. Even if you are an introvert, setting a small goal, such as meeting two new people, can make a big difference. Remember, rarely does a great opportunity come to those who stay silent in the corner. Should you find yourself feeling anxious, just take a deep breath and keep it simple. By practicing these small interactions daily, you will soon find that professional networking becomes second nature. It is not about being the loudest person in the room; it is about making meaningful connections that last.",
+    "article": "In today’s fast-paced workplace, mastering small talk is more than just being friendly; it is a key skill for career growth. Whether you are grabbing coffee in the breakroom or waiting for a meeting to start, these short interactions build rapport with colleagues. However, many professionals feel nervous about what to say. If you are ever unsure, try asking open-ended questions like, 'How has your week been so far?' or 'What are you working on these days?' These simple prompts invite others to share more than just a 'yes' or 'no' answer. Furthermore, not only do these conversations help you network, but they also make the office environment more enjoyable. Never underestimate the power of a casual chat. Rarely do we realize how much a five-minute conversation can influence our professional relationships. By practicing these skills, you will eventually find it much easier to connect with people from different departments. Remember, the goal is not to be perfect, but to be genuine. So, next time you see a coworker, take a deep breath and start a conversation. It is a small step that can lead to big opportunities in your career journey.",
     "vocabulary": [
       {
-        "word": "Open-ended",
-        "meaning_zh": "開放式的（指無法用是或否回答的問題）",
-        "example": "Using open-ended questions helps to keep the conversation going."
+        "word": "rapport",
+        "meaning_zh": "（人際關係的）和諧，融洽",
+        "example": "It is important to build a good rapport with your new colleagues during your first week."
       },
       {
-        "word": "Common ground",
-        "meaning_zh": "共同點",
-        "example": "We found some common ground regarding our interest in international travel."
+        "word": "open-ended",
+        "meaning_zh": "開放式的（問題）",
+        "example": "Try to ask open-ended questions to keep the conversation flowing naturally."
       },
       {
-        "word": "Underestimate",
+        "word": "underestimate",
         "meaning_zh": "低估",
-        "example": "Never underestimate the importance of good communication skills in the workplace."
+        "example": "Do not underestimate the impact of a positive attitude in the workplace."
       },
       {
-        "word": "Second nature",
-        "meaning_zh": "習以為常的事、本能",
-        "example": "After months of practice, driving in the city became second nature to me."
+        "word": "genuine",
+        "meaning_zh": "真誠的，真實的",
+        "example": "People appreciate it when you show a genuine interest in their work."
       },
       {
-        "word": "Rarely",
-        "meaning_zh": "很少、幾乎不（用於句首時需倒裝）",
-        "example": "Rarely do I have time to relax during the busy season."
+        "word": "not only... but also...",
+        "meaning_zh": "不僅……而且……",
+        "example": "The project was not only challenging but also very rewarding for the team."
       }
     ],
     "podcast_script": [
       {
         "speaker": "Alex",
-        "text": "Hey Maya, I read this interesting article about small talk in the office. Do you find it easy to chat with coworkers?"
+        "text": "Hey Maya, I was reading this article about office small talk. Do you find it hard to start conversations with coworkers?"
       },
       {
         "speaker": "Maya",
-        "text": "To be honest, Alex, not really! Sometimes I just feel awkward standing by the coffee machine."
+        "text": "Honestly, Alex, sometimes I do! Especially when I'm busy. How about you?"
       },
       {
         "speaker": "Alex",
-        "text": "I totally get that. The article suggests asking open-ended questions. Like, instead of saying 'It's cold today,' ask 'What are you working on?'"
+        "text": "Same here. But the article says it’s actually a key skill for networking. It’s not just about passing time."
       },
       {
         "speaker": "Maya",
-        "text": "That’s a great point. It makes the conversation feel more natural, right?"
+        "text": "That makes sense. I guess it helps build rapport, right? It makes the office feel less formal."
       },
       {
         "speaker": "Alex",
-        "text": "Exactly. And it helps you find common ground with people you don't know well."
+        "text": "Exactly. The article suggests using open-ended questions. Like, instead of saying 'Is your day busy?', ask 'What are you working on?'"
       },
       {
         "speaker": "Maya",
-        "text": "True. But what about networking events? I usually end up hiding in the corner."
+        "text": "Oh, that’s a great tip. Not only does that keep the talk going, but it also shows you care about their tasks."
       },
       {
         "speaker": "Alex",
-        "text": "Haha, I’ve been there! The trick is to set small goals, like just talking to two new people."
+        "text": "Spot on. And rarely do we think about how those five minutes can actually help our careers later on."
       },
       {
         "speaker": "Maya",
-        "text": "That sounds much more manageable. I’ll definitely try that next time."
+        "text": "True. I’ll definitely try to be more genuine next time I’m at the coffee machine!"
       }
     ],
     "comprehension_quiz": [
       {
-        "question": "What does the author suggest to improve professional networking?",
+        "question": "According to the article, why should you use open-ended questions?",
         "options": [
-          "Focusing only on technical work deadlines.",
-          "Asking open-ended questions to find common ground.",
-          "Avoiding networking events to stay comfortable.",
-          "Talking about the weather as much as possible."
+          "To finish the conversation as quickly as possible.",
+          "To get more detailed answers from your colleagues.",
+          "To test if your coworkers are listening to you.",
+          "To avoid talking about work-related topics."
         ],
         "correct_index": 1,
-        "explanation_zh": "文章中提到為了建立專業關係，應使用開放式問題來尋找共同點，而非僅談論天氣。"
+        "explanation_zh": "文章提到使用開放式問題（open-ended questions）的目的是鼓勵對方分享更多資訊，而非僅回答簡單的「是」或「否」。"
       },
       {
-        "question": "Choose the correct sentence structure: 'Rarely ___ a great opportunity come to those who stay silent.'",
+        "question": "Which of the following is true about small talk based on the text?",
         "options": [
-          "does",
-          "do",
-          "is",
-          "has"
+          "It is only useful for people who are new to the company.",
+          "It usually makes the office environment feel more stressful.",
+          "It can positively influence your professional relationships.",
+          "It should always be strictly about professional tasks."
         ],
-        "correct_index": 0,
-        "explanation_zh": "當否定副詞 Rarely 放在句首時，句子需要倒裝。主詞 'a great opportunity' 是單數，因此助動詞使用 does。"
+        "correct_index": 2,
+        "explanation_zh": "文章強調閒聊（small talk）能幫助建立職場人際關係，並讓辦公室氛圍更融洽。"
       }
     ],
     "speaking_questions": [
-      "What is your favorite way to start a conversation with someone you just met at a party or social event?",
-      "In a business meeting, how do you handle a situation where you disagree with a colleague's idea?"
+      "What is your favorite topic to talk about when you first meet someone at a social event?",
+      "In a business meeting, how do you politely handle a situation where you disagree with a colleague's suggestion?"
     ]
   },
-  "latest_lesson_date": "2026-11-21"
+  "latest_lesson_date": "2026-11-22"
 }
