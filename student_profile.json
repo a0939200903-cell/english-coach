@@ -50,6 +50,12 @@
       "title": "Navigating Office Small Talk and Networking",
       "category": "Business Communication",
       "toeic_score": 550
+    },
+    {
+      "date": "2026-11-25",
+      "title": "Navigating Office Small Talk and Networking",
+      "category": "Business & Daily English",
+      "toeic_score": 550
     }
   ],
   "vocab_bank": [
@@ -217,106 +223,121 @@
       "word": "Fast-paced",
       "meaning_zh": "節奏快的",
       "date": "2026-11-24"
+    },
+    {
+      "word": "career trajectory",
+      "meaning_zh": "職業發展軌跡",
+      "date": "2026-11-25"
+    },
+    {
+      "word": "soft skills",
+      "meaning_zh": "軟實力（人際溝通、適應力等）",
+      "date": "2026-11-25"
+    },
+    {
+      "word": "climb the corporate ladder",
+      "meaning_zh": "在職場上步步高升",
+      "date": "2026-11-25"
     }
   ],
   "latest_topic": "Navigating Office Small Talk and Networking",
   "latest_questions": [
-    "How do you usually start a conversation with a new person at a social event?",
-    "If you were asked to give feedback on a project in a meeting, how would you phrase your opinion to sound professional yet open to discussion?"
+    "What is the most common topic you use to start a conversation with a new acquaintance?",
+    "In your opinion, how can a company encourage employees to develop better soft skills for their future career growth?"
   ],
   "latest_lesson": {
     "topic_title": "Navigating Office Small Talk and Networking",
-    "category": "Business Communication",
-    "article": "In today’s fast-paced workplace, mastering small talk is more than just being friendly; it is a key skill for career growth. Whether you are at a coffee station or waiting for a meeting to start, these brief interactions help build rapport with colleagues. However, many professionals struggle to move beyond 'How are you?' or 'Busy day?' If you want to connect better, try asking open-ended questions. For instance, instead of asking 'Did you finish the report?', try 'What are your thoughts on the new project strategy?' This simple change invites a deeper conversation. Not only does this show genuine interest, but it also helps you understand the bigger picture. Rarely do we realize how much networking happens during these casual moments. Should you find yourself feeling nervous, remember that most people enjoy talking about their own experiences. Never underestimate the power of active listening. If you listen carefully, you will find it much easier to keep the conversation flowing. By practicing these small interactions, you will gain confidence and become more comfortable in various professional settings, eventually turning simple chats into meaningful professional connections.",
+    "category": "Business & Daily English",
+    "article": "In today’s fast-paced work environment, building rapport is just as important as meeting deadlines. Many employees struggle with small talk, viewing it as a distraction. However, engaging in casual conversation can actually lead to better collaboration. Not only does it help you get to know your colleagues, but it also creates a more relaxed atmosphere. If you were to master the art of asking open-ended questions, you would find networking much easier. For instance, instead of asking 'Do you like your job?', try 'What has been the most interesting project you’ve worked on lately?' Rarely do we realize how much a simple chat can influence our career trajectory. Never have I seen someone climb the corporate ladder solely through technical skills; soft skills are the secret weapon. Whether you are grabbing a coffee in the breakroom or waiting for a meeting to start, take that opportunity to connect. By shifting your mindset, you can turn awkward silences into meaningful professional relationships. Remember, small talk is never just about the weather; it is about showing that you value the people you work with.",
     "vocabulary": [
       {
-        "word": "Rapport",
-        "meaning_zh": "建立關係、融洽的關係",
-        "example": "He quickly built a good rapport with his new colleagues."
+        "word": "build rapport",
+        "meaning_zh": "建立關係/融洽的關係",
+        "example": "It is essential to build rapport with your clients during the first meeting."
       },
       {
-        "word": "Open-ended",
-        "meaning_zh": "開放式的（問題，無法用簡單的是否回答）",
-        "example": "Try to ask open-ended questions to encourage more discussion."
+        "word": "open-ended question",
+        "meaning_zh": "開放式問題",
+        "example": "Using open-ended questions encourages your coworkers to share more information."
       },
       {
-        "word": "Underestimate",
-        "meaning_zh": "低估",
-        "example": "Never underestimate the importance of soft skills in the workplace."
+        "word": "career trajectory",
+        "meaning_zh": "職業發展軌跡",
+        "example": "Taking on this new project will definitely improve your career trajectory."
       },
       {
-        "word": "Active listening",
-        "meaning_zh": "積極傾聽",
-        "example": "Active listening is essential for effective communication in meetings."
+        "word": "soft skills",
+        "meaning_zh": "軟實力（人際溝通、適應力等）",
+        "example": "While technical expertise is important, soft skills are what make a great leader."
       },
       {
-        "word": "Fast-paced",
-        "meaning_zh": "節奏快的",
-        "example": "Working in a fast-paced environment can be challenging but rewarding."
+        "word": "climb the corporate ladder",
+        "meaning_zh": "在職場上步步高升",
+        "example": "She worked hard for years before she finally started to climb the corporate ladder."
       }
     ],
     "podcast_script": [
       {
         "speaker": "Alex",
-        "text": "Hey Maya, I was reading this article about office small talk. It says it's actually super important for our careers."
+        "text": "Hey Maya, I read an interesting article today about how important small talk is at the office. Do you think it's really that big of a deal?"
       },
       {
         "speaker": "Maya",
-        "text": "Oh, definitely! I used to think small talk was just a waste of time, but I realize now it helps build rapport."
+        "text": "Oh, definitely! I used to think it was just a waste of time, but honestly, it makes working with people so much smoother."
       },
       {
         "speaker": "Alex",
-        "text": "Exactly. But honestly, I always get stuck saying 'How are you?' and then it gets awkward."
+        "text": "I agree. The article mentioned that if you were to ask better questions, networking would become way easier."
       },
       {
         "speaker": "Maya",
-        "text": "I get that. The article suggests using open-ended questions. Like, instead of 'Is the report done?', try 'How do you feel about the new strategy?'"
+        "text": "That makes sense. Instead of just saying 'How's your day?', asking about their current project is a game changer."
       },
       {
         "speaker": "Alex",
-        "text": "That makes sense. It sounds way more professional, right?"
+        "text": "Right? And it also talked about how soft skills are just as vital as technical ones for moving up the corporate ladder."
       },
       {
         "speaker": "Maya",
-        "text": "Totally. Plus, it shows you're actually interested in what they think."
+        "text": "Exactly. Rarely do I see someone get a promotion just because they are good at spreadsheets. You need to connect with people!"
       },
       {
         "speaker": "Alex",
-        "text": "True. But what if I get nervous? I sometimes worry I'll say something wrong."
+        "text": "True. Never have I felt so awkward, though, when I have nothing to say to a manager in the breakroom."
       },
       {
         "speaker": "Maya",
-        "text": "Just remember, most people love talking about their own work. Just focus on active listening, and you'll be fine."
+        "text": "Haha, I’ve been there! Just keep it simple. Even a quick comment about the coffee machine can break the ice."
       }
     ],
     "comprehension_quiz": [
       {
-        "question": "According to the article, what is a good way to improve office small talk?",
+        "question": "According to the article, why should employees engage in small talk?",
         "options": [
-          "Asking simple yes/no questions to save time.",
-          "Focusing on the report deadline only.",
-          "Asking open-ended questions to invite deeper conversation.",
-          "Avoiding conversations at the coffee station."
-        ],
-        "correct_index": 2,
-        "explanation_zh": "文中提到應使用開放式問題（open-ended questions）來促進對話，而非僅用是非題。"
-      },
-      {
-        "question": "Which of the following describes the strategy suggested for nervous speakers?",
-        "options": [
-          "Avoid talking to colleagues entirely.",
-          "Practice active listening.",
-          "Change the subject immediately.",
-          "Talk only about the weather."
+          "To avoid doing actual work.",
+          "To improve collaboration and build professional relationships.",
+          "To prove they are smarter than their colleagues.",
+          "To complain about company deadlines."
         ],
         "correct_index": 1,
-        "explanation_zh": "文章建議若感到緊張，應專注於積極傾聽（active listening），這能幫助對話順利進行。"
+        "explanation_zh": "文章指出閒聊有助於改善合作關係並建立專業人脈，並非為了逃避工作。"
+      },
+      {
+        "question": "Which sentence correctly uses the inversion structure mentioned in the text?",
+        "options": [
+          "Never I have seen such a great leader.",
+          "Never have I seen such a great leader.",
+          "I have never seen such a great leader.",
+          "Have I never seen such a great leader."
+        ],
+        "correct_index": 1,
+        "explanation_zh": "當句首使用否定副詞 Never 時，必須將助動詞移至主詞前（倒裝句），故選 1。"
       }
     ],
     "speaking_questions": [
-      "How do you usually start a conversation with a new person at a social event?",
-      "If you were asked to give feedback on a project in a meeting, how would you phrase your opinion to sound professional yet open to discussion?"
+      "What is the most common topic you use to start a conversation with a new acquaintance?",
+      "In your opinion, how can a company encourage employees to develop better soft skills for their future career growth?"
     ]
   },
-  "latest_lesson_date": "2026-11-24"
+  "latest_lesson_date": "2026-11-25"
 }
