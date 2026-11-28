@@ -68,6 +68,12 @@
       "title": "Navigating Office Small Talk and Networking",
       "category": "Business Communication",
       "toeic_score": 550
+    },
+    {
+      "date": "2026-11-28",
+      "title": "Navigating Office Small Talk and Networking",
+      "category": "Business Communication",
+      "toeic_score": 550
     }
   ],
   "vocab_bank": [
@@ -265,114 +271,116 @@
       "word": "Refining",
       "meaning_zh": "改進、精進",
       "date": "2026-11-27"
+    },
+    {
+      "word": "Strike up",
+      "meaning_zh": "開始（談話、友誼等）",
+      "date": "2026-11-28"
+    },
+    {
+      "word": "Go-to",
+      "meaning_zh": "首選的；慣用的",
+      "date": "2026-11-28"
     }
   ],
   "latest_topic": "Navigating Office Small Talk and Networking",
   "latest_questions": [
-    "What do you usually talk about when you meet someone for the first time at a social event?",
-    "If a colleague keeps interrupting your work with small talk, how would you politely handle the situation in a professional manner?"
+    "What is your 'go-to' topic when you have to talk to someone you don't know very well?",
+    "In your workplace, how do you usually start a conversation with a client you are meeting for the first time?"
   ],
   "latest_lesson": {
     "topic_title": "Navigating Office Small Talk and Networking",
     "category": "Business Communication",
-    "article": "In today’s fast-paced corporate world, mastering small talk is just as important as hitting your KPIs. Many employees feel nervous when they have to chat with colleagues or clients during coffee breaks. However, building rapport is essential for long-term career growth. Recently, our team attended a networking event, and I noticed that those who asked open-ended questions were much more successful at connecting with others. For instance, instead of asking 'Do you like your job?', try 'What led you to start a career in this industry?'. Not only does this show genuine interest, but it also helps you avoid awkward silences. Remember, never should you underestimate the power of a simple conversation. Even if you are an introvert, practicing these small interactions can significantly boost your professional presence. If I were you, I would start by setting a goal to talk to one new person each week. Should you find yourself stuck for topics, current industry trends or local events are always safe bets. By consistently refining your communication style, you will find that networking becomes a natural part of your daily routine rather than a stressful chore.",
+    "article": "In today’s fast-paced corporate world, mastering the art of small talk is just as important as your technical skills. Many professionals find it challenging to strike up a conversation with colleagues, especially during coffee breaks or networking events. However, not only can casual chatting break the ice, but it also builds essential rapport. Should you find yourself feeling nervous, remember that most people enjoy talking about themselves. Instead of diving straight into work topics, try asking about their weekend or a recent project. Never underestimate the power of a simple question like, 'How has your week been so far?' If you are worried about awkward silences, have a few 'go-to' topics ready, such as local events or industry trends. Furthermore, listen actively by showing genuine interest in their responses. By doing so, you demonstrate your soft skills, which are highly valued in any organization. Only when you feel comfortable should you transition to more professional discussions. Ultimately, small talk is the bridge to stronger professional relationships. By practicing daily, you will soon find that connecting with others becomes second nature. Never let the fear of small talk hold your career progress back.",
     "vocabulary": [
       {
+        "word": "Strike up",
+        "meaning_zh": "開始（談話、友誼等）",
+        "example": "He tried to strike up a conversation with the person sitting next to him."
+      },
+      {
         "word": "Rapport",
-        "meaning_zh": "融洽關係",
-        "example": "Developing a good rapport with clients is vital for closing successful deals."
+        "meaning_zh": "融洽的關係",
+        "example": "It is important to build a good rapport with your new team members."
       },
       {
-        "word": "Open-ended",
-        "meaning_zh": "開放式的",
-        "example": "Use open-ended questions to encourage people to share more information."
+        "word": "Break the ice",
+        "meaning_zh": "打破僵局",
+        "example": "A funny joke is a great way to break the ice at the start of a meeting."
       },
       {
-        "word": "Underestimate",
-        "meaning_zh": "低估",
-        "example": "Never underestimate the importance of active listening in a meeting."
+        "word": "Go-to",
+        "meaning_zh": "首選的；慣用的",
+        "example": "Pasta is my go-to meal when I am too tired to cook something complex."
       },
       {
-        "word": "Introvert",
-        "meaning_zh": "內向的人",
-        "example": "Even as an introvert, you can become a great public speaker with enough practice."
-      },
-      {
-        "word": "Refining",
-        "meaning_zh": "改進、精進",
-        "example": "She is constantly refining her presentation skills to stay ahead of the competition."
+        "word": "Second nature",
+        "meaning_zh": "習以為常的事；本能",
+        "example": "Driving becomes second nature after you have practiced for a few months."
       }
     ],
     "podcast_script": [
       {
         "speaker": "Alex",
-        "text": "Hey Maya, I just read a piece about office small talk. Honestly, it’s always been a bit stressful for me."
+        "text": "Hey Maya, I just finished reading this article about office small talk. It’s actually quite relevant, don't you think?"
       },
       {
         "speaker": "Maya",
-        "text": "Oh, I totally get that, Alex! Networking can feel pretty forced sometimes, right?"
+        "text": "Oh, definitely! I used to find it super awkward to talk to people in the break room. It felt like I had nothing to say."
       },
       {
         "speaker": "Alex",
-        "text": "Exactly. The article mentioned that asking open-ended questions is the key to breaking the ice."
+        "text": "Same here. I always felt like I had to talk about work projects immediately, but the article suggests we should start with simpler things."
       },
       {
         "speaker": "Maya",
-        "text": "That makes sense. It’s better than those boring yes-or-no questions that just lead to dead ends."
+        "text": "Right, like asking about the weekend. It really helps to break the ice, doesn't it?"
       },
       {
         "speaker": "Alex",
-        "text": "True. It also talked about using inversion for emphasis, like 'Never should you underestimate the power of a chat.'"
+        "text": "Exactly. And it mentions having some 'go-to' topics. That’s a smart move for someone like me who tends to overthink."
       },
       {
         "speaker": "Maya",
-        "text": "That sounds a bit formal, but it’s a great way to sound more professional in meetings."
+        "text": "I agree. Should you prepare a few topics beforehand, you won't feel so stressed during networking events."
       },
       {
         "speaker": "Alex",
-        "text": "I suppose so. But how do you handle it when you're super busy and someone wants to chat?"
+        "text": "That’s a great tip. I’ll try that during our next team lunch."
       },
       {
         "speaker": "Maya",
-        "text": "I usually just say, 'I'd love to catch up later, but I'm in the middle of a deadline right now.'"
-      },
-      {
-        "speaker": "Alex",
-        "text": "That’s a smooth way to set boundaries without being rude."
-      },
-      {
-        "speaker": "Maya",
-        "text": "Exactly! It’s all about finding that balance between being friendly and getting your work done."
+        "text": "You should! Once you practice it a few times, it honestly becomes second nature."
       }
     ],
     "comprehension_quiz": [
       {
-        "question": "According to the text, what is a recommended way to start a conversation?",
+        "question": "According to the article, why is small talk important in a business setting?",
         "options": [
-          "Asking if the person likes their job.",
-          "Asking about the person's private salary.",
-          "Asking open-ended questions about their industry.",
-          "Staying silent to avoid awkwardness."
+          "It helps employees finish their work faster.",
+          "It is a requirement for getting a promotion.",
+          "It helps build professional rapport and connection.",
+          "It allows employees to avoid talking about work topics entirely."
         ],
         "correct_index": 2,
-        "explanation_zh": "文章中提到應使用開放式問題（open-ended questions）來開啟對話，例如詢問對方進入該產業的原因。"
+        "explanation_zh": "文章提到 small talk 不僅能打破僵局，還能建立職場上重要的融洽關係 (rapport)。"
       },
       {
-        "question": "Which sentence correctly uses the advanced grammatical structure mentioned in the text?",
+        "question": "Which grammatical structure is used in the sentence: 'Should you find yourself feeling nervous, remember that most people enjoy talking about themselves.'?",
         "options": [
-          "Never I should underestimate the power of networking.",
-          "Never should I underestimate the power of networking.",
-          "I should never underestimate should the power of networking.",
-          "Should I never underestimate the power of networking?"
+          "A conditional sentence using 'If'.",
+          "An inversion structure replacing 'If you find'.",
+          "A passive voice construction.",
+          "A gerund phrase acting as the subject."
         ],
         "correct_index": 1,
-        "explanation_zh": "當句子以否定副詞 Never 開頭時，必須進行倒裝（Inversion），即助動詞 should 移至主詞 I 之前。"
+        "explanation_zh": "這是條件句的倒裝用法 (Inversion)，'Should you...' 等同於 'If you should...'，是較正式的表達方式。"
       }
     ],
     "speaking_questions": [
-      "What do you usually talk about when you meet someone for the first time at a social event?",
-      "If a colleague keeps interrupting your work with small talk, how would you politely handle the situation in a professional manner?"
+      "What is your 'go-to' topic when you have to talk to someone you don't know very well?",
+      "In your workplace, how do you usually start a conversation with a client you are meeting for the first time?"
     ]
   },
-  "latest_lesson_date": "2026-11-27"
+  "latest_lesson_date": "2026-11-28"
 }
